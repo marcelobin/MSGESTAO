@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block content %}
+<h2><i class="fas fa-info-circle"></i> Detalhes da Loja</h2>
+<ul class="list-group mt-3">
+    <li class="list-group-item"><strong>Nome Fantasia:</strong> {{ loja.nome_fantasia }}</li>
+    <li class="list-group-item"><strong>CNPJ:</strong> {{ loja.cnpj }}</li>
+    <li class="list-group-item"><strong>Cidade:</strong> {{ loja.cidade }}</li>
+    <li class="list-group-item"><strong>Contato Comercial:</strong> {{ loja.contato_comercial }}</li>
+</ul>
+<h5 class="mt-4">Sócios</h5>
+<ul class="list-group">
+{% for s in loja.socios.all %}
+    <li class="list-group-item">{{ s.nome }} - CPF: {{ s.cpf }}</li>
+{% endfor %}
+</ul>
+
+<h5 class="mt-4">Vendedores</h5>
+<ul class="list-group">
+{% for v in loja.vendedores.all %}
+    <li class="list-group-item">{{ v.nome }} - CPF: {{ v.cpf }}</li>
+{% endfor %}
+</ul>
+{% endblock %}

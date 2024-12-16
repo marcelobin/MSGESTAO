@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block content %}
+<h2><i class="fas fa-edit"></i> Editar Cliente</h2>
+<div class="card mt-3">
+    <div class="card-body">
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="btn btn-success"><i class="fas fa-save"></i> Atualizar</button>
+        </form>
+    </div>
+</div>
+{% endblock %}

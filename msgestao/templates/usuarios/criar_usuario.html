@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+<h2 class="my-4"><i class="fas fa-user-plus"></i> Criar Usuário</h2>
+
+<form method="post" class="row g-3">
+    {% csrf_token %}
+    {{ form|crispy }}
+    
+    <div class="col-12">
+        <button type="submit" class="btn btn-success"><i class="fas fa-save"></i> Salvar</button>
+        <a href="{% url 'usuarios:lista' %}" class="btn btn-secondary">Voltar</a>
+    </div>
+</form>
+{% endblock %}

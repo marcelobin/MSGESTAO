@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block content %}
+<h2><i class="fas fa-info-circle"></i> Detalhes do Lançamento</h2>
+<ul class="list-group mt-3">
+    <li class="list-group-item"><strong>Data:</strong> {{ object.data }}</li>
+    <li class="list-group-item"><strong>Tipo:</strong> {{ object.get_tipo_display }}</li>
+    <li class="list-group-item"><strong>Descrição:</strong> {{ object.descricao }}</li>
+    <li class="list-group-item"><strong>Valor:</strong> R$ {{ object.valor }}</li>
+</ul>
+{% endblock %}

@@ -1,0 +1,104 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+<h2><i class="fas fa-plus-circle"></i> Criar Loja</h2>
+<div class="card mt-3">
+    <div class="card-body">
+        <form method="post">
+            {% csrf_token %}
+            <h5>Dados da Loja</h5>
+            <div class="row">
+                <div class="col-md-6">
+                    {{ form.cnpj|as_crispy_field }}
+                </div>
+                <div class="col-md-6">
+                    {{ form.razao_social|as_crispy_field }}
+                </div>
+                <div class="col-md-6">
+                    {{ form.nome_fantasia|as_crispy_field }}
+                </div>
+                <div class="col-md-6">
+                    {{ form.data_constituicao|as_crispy_field }}
+                </div>
+                <div class="col-md-6">
+                    {{ form.cep|as_crispy_field }}
+                </div>
+                <div class="col-md-6">
+                    {{ form.endereco|as_crispy_field }}
+                </div>
+                <div class="col-md-6">
+                    {{ form.nro|as_crispy_field }}
+                </div>
+                <div class="col-md-6">
+                    {{ form.complemento|as_crispy_field }}
+                </div>
+                <div class="col-md-6">
+                    {{ form.bairro|as_crispy_field }}
+                </div>
+                <div class="col-md-6">
+                    {{ form.cidade|as_crispy_field }}
+                </div>
+                <div class="col-md-6">
+                    {{ form.uf|as_crispy_field }}
+                </div>
+                <div class="col-md-6">
+                    {{ form.telefone|as_crispy_field }}
+                </div>
+                <div class="col-md-6">
+                    {{ form.email|as_crispy_field }}
+                </div>
+                <div class="col-md-6">
+                    {{ form.filial|as_crispy_field }}
+                </div>
+                <div class="col-md-6">
+                    {{ form.contato_comercial|as_crispy_field }}
+                </div>
+            </div>
+            <hr>
+            <h5>Sócios</h5>
+            {{ socio_formset.management_form|crispy }}
+            {% for sform in socio_formset %}
+                <div class="border p-2 mb-2">
+                    <div class="row">
+                        <div class="col-md-6">
+                            {{ sform.nome|as_crispy_field }}
+                        </div>
+                        <div class="col-md-6">
+                            {{ sform.cpf|as_crispy_field }}
+                        </div>
+                        <div class="col-md-6">
+                            {{ sform.data_nascimento|as_crispy_field }}
+                        </div>
+                        <div class="col-md-6">
+                            {{ sform.celular|as_crispy_field }}
+                        </div>
+                        <div class="col-md-6">
+                            {{ sform.email|as_crispy_field }}
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+            <hr>
+            <h5>Vendedores</h5>
+            {{ vendedor_formset.management_form|crispy }}
+            {% for vform in vendedor_formset %}
+                <div class="border p-2 mb-2">
+                    <div class="row">
+                        <div class="col-md-6">
+                            {{ vform.nome|as_crispy_field }}
+                        </div>
+                        <div class="col-md-6">
+                            {{ vform.cpf|as_crispy_field }}
+                        </div>
+                        <div class="col-md-6">
+                            {{ vform.chave_pix|as_crispy_field }}
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+            <button type="submit" class="btn btn-success mt-3"><i class="fas fa-save"></i> Salvar</button>
+        </form>
+    </div>
+</div>
+{% endblock %}

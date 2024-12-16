@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block content %}
+<h2><i class="fas fa-info-circle"></i> Detalhes do Cliente</h2>
+<ul class="list-group mt-3">
+    <li class="list-group-item"><strong>Nome:</strong> {{ object.nome }}</li>
+    <li class="list-group-item"><strong>CPF:</strong> {{ object.cpf }}</li>
+    <li class="list-group-item"><strong>Data de Nascimento:</strong> {{ object.data_nascimento }}</li>
+    <li class="list-group-item"><strong>Nome da Mãe:</strong> {{ object.nome_mae }}</li>
+    <li class="list-group-item"><strong>Telefone:</strong> {{ object.telefone }}</li>
+    <li class="list-group-item"><strong>Email:</strong> {{ object.email }}</li>
+</ul>
+{% endblock %}

@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block content %}
+<h2><i class="fas fa-exclamation-triangle"></i> Confirmar Exclusão</h2>
+<p>Deseja realmente excluir a financeira {{ object.nome }}?</p>
+<form method="post">
+    {% csrf_token %}
+    <button type="submit" class="btn btn-danger"><i class="fas fa-trash"></i> Excluir</button>
+    <a href="{% url 'financeiras:lista' %}" class="btn btn-secondary">Cancelar</a>
+</form>
+{% endblock %}

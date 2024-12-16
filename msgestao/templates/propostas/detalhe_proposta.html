@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block content %}
+<h2><i class="fas fa-info-circle"></i> Detalhes da Proposta</h2>
+<ul class="list-group mt-3">
+    <li class="list-group-item"><strong>Nro Proposta:</strong> {{ proposta.nro_proposta }}</li>
+    <li class="list-group-item"><strong>Cliente:</strong> {{ proposta.cliente.nome }} (CPF: {{ proposta.cliente.cpf }})</li>
+    <li class="list-group-item"><strong>Loja:</strong> {{ proposta.loja.nome_fantasia }}</li>
+    <li class="list-group-item"><strong>Financeira:</strong> {{ proposta.financeira.nome }}</li>
+    <li class="list-group-item"><strong>Contato Comercial:</strong> {{ proposta.contato_comercial }}</li>
+    <li class="list-group-item"><strong>Valor Financiado:</strong> R$ {{ proposta.valor_financiado }}</li>
+    <li class="list-group-item"><strong>Prazo:</strong> {{ proposta.prazo }} meses</li>
+</ul>
+
+<h5 class="mt-4">Dados do Veículo</h5>
+<ul class="list-group">
+    <li class="list-group-item"><strong>Marca:</strong> {{ proposta.veiculo.marca.nome }}</li>
+    <li class="list-group-item"><strong>Modelo:</strong> {{ proposta.veiculo.modelo }}</li>
+    <li class="list-group-item"><strong>Placa:</strong> {{ proposta.veiculo.placa }}</li>
+    <li class="list-group-item"><strong>Renavam:</strong> {{ proposta.veiculo.renavam }}</li>
+    <li class="list-group-item"><strong>Chassi:</strong> {{ proposta.veiculo.chassi }}</li>
+    <li class="list-group-item"><strong>Valor Veículo:</strong> R$ {{ proposta.veiculo.valor_veiculo }}</li>
+</ul>
+{% endblock %}
